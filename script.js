@@ -43,3 +43,24 @@ switch (true) {
     alert("I don\'t recognize this Jankenpon");
   }
 }
+// console.log(playRound(playerSelection, computerSelection));
+function game() {
+  for (let i = 0; i < 5; i++) {
+     playRound(playerSelection, getComputerChoice());
+     playerSelection = prompt("What\'s your choice?").toLowerCase();
+
+  }
+}
+game();
+ scoreBoard = `Player: ${playerScore} computerScore ${computerScore}`;
+
+  if (playerScore > computerScore) {
+    console.log(scoreBoard);
+    console.log("You won the game");
+  } else if (playerScore === computerScore) {
+    console.log(scoreBoard);
+    console.log("It\'s a tie.");
+  } else {
+    console.log(scoreBoard);
+    console.log("You lose the game");
+  }
